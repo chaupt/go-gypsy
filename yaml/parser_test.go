@@ -176,6 +176,35 @@ var parseTests = []struct {
 			"",
 	},
 	{
+		Input: "---\n" +
+			"japanese:\n" +
+			" - ichi\n" +
+			" - ni\n" +
+			" - san\n" +
+			"french:\n" +
+			" - un\n" +
+			" - deux\n" +
+			" - trois\n" +
+			"english:\n" +
+			" - one\n" +
+			" - two\n" +
+			" - three\n" +
+			"",
+		Output: "english:\n" +
+			"  - one\n" +
+			"  - two\n" +
+			"  - three\n" +
+			"french:\n" +
+			"  - un\n" +
+			"  - deux\n" +
+			"  - trois\n" +
+			"japanese:\n" +
+			"  - ichi\n" +
+			"  - ni\n" +
+			"  - san\n" +
+			"",
+	},
+	{
 		Input:  `test: "localhost:8080"`,
 		Output: `test: "localhost:8080"` + "\n",
 	},
